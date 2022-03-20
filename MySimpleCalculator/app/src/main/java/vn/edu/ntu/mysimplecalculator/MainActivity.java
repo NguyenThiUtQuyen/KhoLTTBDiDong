@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
     //Hàm Xử lý
     public void XuLyChia(View v){
         //Lay du lieu
-        if(editSoA=!0)
-
         String sA= editSoA.getText().toString();
         String sB= editSoB.getText().toString();
         //Chuyen sang kieu so

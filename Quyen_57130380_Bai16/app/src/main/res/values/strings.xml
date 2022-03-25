@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quyen_57130380_Bai16
+    </string>
+    <string-array name="ten_array"> <item>Tèo</item> <item>Tí</item> <item>Bin</item> <item>Bo</item> </string-array>
+</resources>

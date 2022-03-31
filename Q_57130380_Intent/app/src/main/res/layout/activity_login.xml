@@ -104,7 +104,6 @@
         android:background="#0C041B"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,12 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Q_57130380_Intent">
         <activity
-<<<<<<< HEAD
+
             android:name=".ActivityHome"
             android:exported="false" />
         <activity
-=======
->>>>>>> 2e208a70936bdd2c12b29b4f38103b0ca909b091
+
             android:name=".ActivityLogin"
             android:exported="false" />
         <activity

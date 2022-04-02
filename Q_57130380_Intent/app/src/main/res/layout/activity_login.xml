@@ -86,6 +86,7 @@
         android:id="@+id/edEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:hint="abc@gmail.com"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
         android:textColor="#091242"

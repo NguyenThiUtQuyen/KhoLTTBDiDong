@@ -37,26 +37,28 @@ public class ActivityLogin extends AppCompatActivity {
         String username = edUserName.getText().toString().trim();
         String pass = edPass.getText().toString().trim();
         String mail = edMail.getText().toString().trim();
-        if (username.isEmpty() || username=="") {
-            Toast.makeText(this, "Điền Username, Password, Email để đăng nhập", Toast.LENGTH_SHORT).show();
-        }
-        if (pass.isEmpty() || pass=="") {
-            Toast.makeText(this, "Điền Username, Password, Email để đăng nhập", Toast.LENGTH_SHORT).show();
-        }
-        if (mail.isEmpty() || mail=="") {
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        if (username.isEmpty() || pass.isEmpty() || mail.isEmpty()  ) {
             Toast.makeText(this, "Điền Username, Password, Email để đăng nhập", Toast.LENGTH_SHORT).show();
         }
         else {
-            Intent iTTDangNhap = new Intent(this,ActivityHome.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("Name", username);
-            bundle.putString("Pass", pass);
-            bundle.putString("Mail", mail);
+            if(mail.matches(emailPattern)==false)
+            {
+                Toast.makeText(this, "Mail chưa đúng", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Intent iTTDangNhap = new Intent(this,ActivityHome.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Name", username);
+                bundle.putString("Pass", pass);
+                bundle.putString("Mail", mail);
 
-            iTTDangNhap.putExtra("UN", bundle);
+                iTTDangNhap.putExtra("UN", bundle);
 
-            startActivity(iTTDangNhap);
-            finish();
+                startActivity(iTTDangNhap);
+                finish();
+            }
+
         }
 
     }

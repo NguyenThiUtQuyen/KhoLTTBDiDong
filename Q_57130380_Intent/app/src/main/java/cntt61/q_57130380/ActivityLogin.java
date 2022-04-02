@@ -3,16 +3,18 @@ package cntt61.q_57130380;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ActivityLogin extends AppCompatActivity {
     EditText edUserName, edPass, edMail;
     Button btnXacNhan;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,21 +30,35 @@ public class ActivityLogin extends AppCompatActivity {
 
     public void DangNhap(View view)
     {
+
         edUserName = (EditText) findViewById(R.id.edName);
         edPass = (EditText) findViewById(R.id.edPass);
         edMail = (EditText) findViewById(R.id.edEmail);
-        String username = edUserName.getText().toString();
-        String pass = edPass.getText().toString();
-        String mail = edMail.getText().toString();
+        String username = edUserName.getText().toString().trim();
+        String pass = edPass.getText().toString().trim();
+        String mail = edMail.getText().toString().trim();
+        if (username.isEmpty() || username=="") {
+            Toast.makeText(this, "Điền Username, Password, Email để đăng nhập", Toast.LENGTH_SHORT).show();
+        }
+        if (pass.isEmpty() || pass=="") {
+            Toast.makeText(this, "Điền Username, Password, Email để đăng nhập", Toast.LENGTH_SHORT).show();
+        }
+        if (mail.isEmpty() || mail=="") {
+            Toast.makeText(this, "Điền Username, Password, Email để đăng nhập", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent iTTDangNhap = new Intent(this,ActivityHome.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("Name", username);
+            bundle.putString("Pass", pass);
+            bundle.putString("Mail", mail);
 
-        Intent iTTDangNhap = new Intent(this,ActivityHome.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("Name", username);
+            iTTDangNhap.putExtra("UN", bundle);
 
-        iTTDangNhap.putExtra("UN", bundle);
+            startActivity(iTTDangNhap);
+            finish();
+        }
 
-        startActivity(iTTDangNhap);
-        finish();
     }
 
 }

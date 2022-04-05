@@ -16,6 +16,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnLogin = (Button) findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DangNhap(view);
+            }
+        });
     }
 
     public void DangNhap(View view)

@@ -73,6 +73,7 @@
         android:hint="abc@gmail.com"
         android:text="Login"
         android:textSize="19dp"
+        android:onClick="DangNhap"
         android:background="#0C041B"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"

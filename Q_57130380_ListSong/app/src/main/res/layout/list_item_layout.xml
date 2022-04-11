@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imgCaSi"
-        android:layout_width="225dp"
-        android:layout_height="195dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="10dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -17,10 +17,9 @@
 
     <TextView
         android:id="@+id/tvTenBH"
-        android:layout_width="480dp"
-        android:layout_height="78dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="TextView"
         android:textSize="30dp"
         app:layout_constraintLeft_toRightOf="@+id/imgCaSi"
         app:layout_constraintRight_toRightOf="parent"
@@ -28,10 +27,9 @@
 
     <TextView
         android:id="@+id/tvTenCS"
-        android:layout_width="480dp"
-        android:layout_height="78dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@id/imgCaSi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTenBH"
         app:layout_constraintLeft_toRightOf="@+id/imgCaSi"
         app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

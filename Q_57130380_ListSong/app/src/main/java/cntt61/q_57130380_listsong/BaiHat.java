@@ -1,14 +1,14 @@
 package cntt61.q_57130380_listsong;
 
 public class BaiHat {
-    private String tenBaiHat;
-    private String tenHinhAnh;
-    private String tenCaSi;
+    String tenBaiHat;
+    String tenCaSi;
+    Integer tenHinhAnh;
 
-    public BaiHat(String tenBaiHat, String tenHinhAnh, String tenCaSi) {
+    public BaiHat(String tenBaiHat, String tenCaSi, Integer tenHinhAnh) {
         this.tenBaiHat = tenBaiHat;
-        this.tenHinhAnh = tenHinhAnh;
         this.tenCaSi = tenCaSi;
+        this.tenHinhAnh = tenHinhAnh;
     }
 
     public String getTenBaiHat() {
@@ -19,14 +19,6 @@ public class BaiHat {
         this.tenBaiHat = tenBaiHat;
     }
 
-    public String getTenHinhAnh() {
-        return tenHinhAnh;
-    }
-
-    public void setTenHinhAnh(String tenHinhAnh) {
-        this.tenHinhAnh = tenHinhAnh;
-    }
-
     public String getTenCaSi() {
         return tenCaSi;
     }
@@ -35,9 +27,11 @@ public class BaiHat {
         this.tenCaSi = tenCaSi;
     }
 
-    @Override
-    public String toString() {
-        return   tenBaiHat + '\'' +
-                 tenCaSi + '\'' ;
+    public Integer getTenHinhAnh() {
+        return tenHinhAnh;
+    }
+
+    public void setTenHinhAnh(Integer tenHinhAnh) {
+        this.tenHinhAnh = tenHinhAnh;
     }
 }

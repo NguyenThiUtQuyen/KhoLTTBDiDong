@@ -5,78 +5,60 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomListAdapter extends BaseAdapter {
-    private List<BaiHat> listData;
-    private LayoutInflater layoutInflater;
-    private Context context;
+    Context myContext;
+    int myLayout;
+    List<BaiHat> arrayBaihat;
 
-    public CustomListAdapter(List<BaiHat> listData, Context aContext) {
-        this.listData = listData;
-        this.context = aContext;
-        layoutInflater = LayoutInflater.from(aContext);
+    public CustomListAdapter(Context context, int layout, List<BaiHat> baiHatList)
+    {
+        myContext = context;
+        myLayout = layout;
+        arrayBaihat = baiHatList;
     }
 
 
     @Override
     public int getCount() {
-        return listData.size();
+        return arrayBaihat.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return listData.get(position);
+    public Object getItem(int i) {
+        return null;
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public long getItemId(int i) {
+        return 0;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
-        if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.list_item_layout, null);
-            holder = new ViewHolder();
-            holder.imgBH = (ImageView) convertView.findViewById(R.id.imgCaSi);
-            holder.txtBH = (TextView) convertView.findViewById(R.id.tvTenBH);
-            holder.txtCS = (TextView) convertView.findViewById(R.id.tvTenCS);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-        }
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        LayoutInflater inflater = (LayoutInflater) myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        view = inflater.inflate(myLayout, null);
 
+        //Anh xa va gán giá trị
+        TextView txtTenBH = (TextView) view.findViewById(R.id.tvTenBH);
+        txtTenBH.setText(arrayBaihat.get(i).tenBaiHat);
 
-        BaiHat baiHat = this.listData.get(position);
+        TextView txtTenCS = (TextView) view.findViewById(R.id.tvTenCS);
+        txtTenCS.setText(arrayBaihat.get(i).tenCaSi);
 
-        holder.txtBH.setText(baiHat.getTenBaiHat());
-        int imageId = this.getMipmapResIdByName(baiHat.getTenHinhAnh());
-
-        holder.imgBH.setImageResource(imageId);
-
-        holder.txtCS.setText("Tên ca sĩ: " + baiHat.getTenCaSi());
-
-        return convertView;
-    }
-    public int getMipmapResIdByName(String resName)  {
-        // Return 0 if not found.
-        int resID = context.getResources().getIdentifier(resName , "drawable", context.getPackageName());
-        Log.i("CustomListView", "Res Name: "+ resName+"==> Res ID = "+ resID);
-        return resID;
-    }
-
-    static class ViewHolder {
-        ImageView imgBH;
-        TextView txtBH;
-        TextView txtCS;
+        ImageView imgHinh = (ImageView) view.findViewById(R.id.imgCaSi);
+        imgHinh.setImageResource(arrayBaihat.get(i).tenHinhAnh);
+        return view;
     }
 }

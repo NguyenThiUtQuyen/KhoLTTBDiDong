@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#5291C3"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Cạnh a:"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:id="@+id/tvCanhA"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edCanhA" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Cạnh B:"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:id="@+id/tvCanhB"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edCanhB" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Chiều cao:"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:id="@+id/tvCao"/>
+
+        <EditText
+            android:id="@+id/edCao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btnTinhCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="TinhChuVi"
+            android:text="Tính Chu Vi"/>
+
+        <Button
+            android:id="@+id/btnTinhDT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="TinhDienTich"
+            android:text="Tính Diện tích" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kết quả hiển thị"
+        android:id="@+id/tvKetQua"/>
+</LinearLayout>
